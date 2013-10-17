@@ -1,0 +1,73 @@
+﻿<!-- saved from url=(0014)about:internet -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FLASH </title>
+<script language="JavaScript">
+		
+	
+		
+     function pageInit() { 
+
+     }
+     
+     function getFlash(movieName) {
+    if (navigator.appName.indexOf("Microsoft") !=-1) {
+        return window[movieName];
+    }
+    else {
+        return document[movieName];
+    }
+}
+
+  			
+         
+     
+     function uploadfile() {
+  				var flash = 	getFlash("ExternalInterfaceExample");
+         flash.SetURL(uploadForm.action);
+         flash.SetFilename("audiox.mp3");
+  		
+     }
+     
+
+</script>
+</head>
+<body>
+	
+	
+     <object id="ExternalInterfaceExample" name="ExternalInterfaceExample" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="215" height="138">
+     <param name="movie" value="FlashRecorder.swf" />
+     <param name="quality" value="high" />
+     <param name="allowScriptAccess" value="always" />
+     <embed allowScriptAccess="always" src="FlashRecorder.swf" name="ExternalInterfaceExample" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="215" height="138"></embed>
+		 </object>
+		 
+		 
+		 <object type="application/x-shockwave-flash" data="dewplayer-vol.swf" width="200" height="20" id="dewplayer" name="dewplayer">
+		 	 <param name="wmode" value="transparent" />
+		 	 <param name="movie" value="dewplayer.swf" />
+		 	  <param name="flashvars" value="mp3=http://l.a.ppsrc.com/2013/1003/02/gZNqZKRk4CP6SMaHUcXp1EclAT3hq0vJJQoZ_3pm&amp;autostart=1" /> 
+		 	  </object>
+     
+     
+     <div>
+     	<a href="JavaScript:uploadfile()"  id="setvalue" >载入服务器地址</a>
+     </div>
+     
+     <div>
+     	
+     
+     <form id="uploadForm" name="uploadForm" action="http://localhost/upload/upload.php">
+    <input name="authenticity_token" value="xxxxx" type="hidden">
+    <input name="upload_file[parent_id]" value="1" type="hidden">
+    <input name="format" value="json" type="hidden">
+   </form>
+   </div>
+</body>
+
+
+
+
+
+</html>
